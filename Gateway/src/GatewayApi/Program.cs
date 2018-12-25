@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace IdentityApi
+namespace GatewayApi
 {
     public class Program
     {
@@ -19,8 +19,11 @@ namespace IdentityApi
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .ConfigureAppConfiguration((host, config) => {
+                    config.AddJsonFile("ocelot.json");
+                })
                 .UseStartup<Startup>()
-                .UseUrls("http://localhost:5001")
+                .UseUrls("http://localhost:5000")
                 .Build();
     }
 }

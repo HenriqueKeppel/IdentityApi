@@ -7,7 +7,7 @@ using IdentityApi.Models;
 
 namespace IdentityApi.Controllers
 {
-    [Route("Identity/v1/api/[controller]")]
+    [Route("IdentityApi/v1/[controller]")]
     public class IdentityController : Controller
     {
         // GET api/values/5
